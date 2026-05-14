@@ -53,7 +53,7 @@
     <Compile Include="DataAccess\ClassDAO.cs" />
     <Compile Include="DataAccess\DBHelper.cs" />
     <Compile Include="DataAccess\MemberDAO.cs" />
-    <Compile Include="DataAccess\StoredProcedures.cs" />
+    <Content Include="DataAccess\StoredProcedures.sql" />
     <Compile Include="Forms\Form1.cs">
       <SubType>Form</SubType>
     </Compile>

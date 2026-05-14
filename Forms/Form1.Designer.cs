@@ -32,6 +32,7 @@
             this.loginUsername = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.loginLbl = new System.Windows.Forms.Label();
+            this.DOBPicker = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // loginBtn
@@ -68,11 +69,20 @@
             this.loginLbl.TabIndex = 3;
             this.loginLbl.Text = "Welcome to Bob\'s Gym Membership Management platform";
             // 
+            // DOBPicker
+            // 
+            this.DOBPicker.Location = new System.Drawing.Point(1087, 373);
+            this.DOBPicker.Name = "DOBPicker";
+            this.DOBPicker.Size = new System.Drawing.Size(463, 38);
+            this.DOBPicker.TabIndex = 4;
+            this.DOBPicker.ValueChanged += new System.EventHandler(this.DOBPicker_ValueChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1627, 1069);
+            this.Controls.Add(this.DOBPicker);
             this.Controls.Add(this.loginLbl);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.loginUsername);
@@ -90,6 +100,7 @@
         private System.Windows.Forms.TextBox loginUsername;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label loginLbl;
+        private System.Windows.Forms.DateTimePicker DOBPicker;
     }
 }
 

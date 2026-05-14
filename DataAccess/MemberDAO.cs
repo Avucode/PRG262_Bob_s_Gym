@@ -23,9 +23,9 @@ namespace PRG262_Bob_s_Gym.DataAccess
             SqlParameter[] parameter = {
                 new SqlParameter("@FirstName", member.FirstName),
                 new SqlParameter("@LastName", member.LastName),
-                new SqlParameter("@DateOFBirth", member.DOB),
+                new SqlParameter("@DateOfBirth", member.DOB),
                 new SqlParameter("@Gender", member.Gender),
-                new SqlParameter("@PhonNumber", member.PhoneNumber),
+                new SqlParameter("@PhoneNumber", member.PhoneNumber),
                 new SqlParameter("@Address", member.Address),
                 new SqlParameter("@TrainingProgram", member.TrainingProgram),
                 new SqlParameter("@MembershipStartDate", member.MembershipStartDate),
@@ -51,6 +51,7 @@ namespace PRG262_Bob_s_Gym.DataAccess
         {
             SqlParameter[] parameters =
             {
+                new SqlParameter("@MemberID", member.MemberID),
                 new SqlParameter("@FirstName", member.FirstName),
                 new SqlParameter("@LastName", member.LastName),
                 new SqlParameter("@DateOFBirth", member.DOB),

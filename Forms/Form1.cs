@@ -12,9 +12,16 @@ namespace PRG262_Bob_s_Gym
 {
     public partial class Form1 : Form
     {
+
+        public DateTime dtp => DOBPicker.Value;
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void DOBPicker_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
