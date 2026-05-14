@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using PRG262_Bob_s_Gym.DataAccess;
 
 namespace PRG262_Bob_s_Gym
 {
@@ -18,6 +19,9 @@ namespace PRG262_Bob_s_Gym
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
+
+            DBHelper.CreateConnection();
+            DBHelper.ExecuteNonQ($"INSERT INTO DATABASE databases VALUES '{}'");
             
         }
     }
