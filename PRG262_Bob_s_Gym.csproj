@@ -60,7 +60,7 @@
     <Compile Include="Themes\GymTheme.cs" />
     <Compile Include="Utilities\FileHandler.cs" />
     <Compile Include="Utilities\FormHandler.cs" />
-<<<<<<< Updated upstream
+
     <EmbeddedResource Include="Forms\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
