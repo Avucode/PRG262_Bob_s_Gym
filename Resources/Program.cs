@@ -18,28 +18,9 @@ namespace PRG262_Bob_s_Gym
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Form1 form = new Form1();
+            loginFrm form = new loginFrm();
             Application.Run(form);
-            DateTime dt = form.dtp;
 
-            // this is an example
-
-            var newMember = new Member
-            {
-                FirstName = "Han",
-                LastName = "Solo",
-                DOB = dt,
-                Gender = "Male",
-                PhoneNumber = "0603311234",          // Keep as string
-                Address = "3 Dingo Drive",
-                TrainingProgram = "Weights",
-                MembershipStartDate = dt,
-                MembershipEndDate = dt
-            };
-
-            MemberDAO mdao = new MemberDAO();
-            int newMemberID = mdao.AddMember(newMember);
-            MessageBox.Show($"New member added successfully: {newMemberID}");
         }
     }
 }

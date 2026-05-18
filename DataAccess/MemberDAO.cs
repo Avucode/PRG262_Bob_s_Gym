@@ -36,10 +36,18 @@ namespace PRG262_Bob_s_Gym.DataAccess
             return Convert.ToInt32(result);
         }
 
-        public DataTable GetAllMembers(int memberID)
+        public DataTable GetAllMembers()
         {
-            SqlParameter[] parameter = { new SqlParameter("@MemberID", memberID) };
-            return DBHelper.ExecDataTable("sp_GetMemberByID", CommandType.StoredProcedure, parameter);
+
+            try
+            {
+                return DBHelper.ExecDataTable("sp_GetAllMembers", CommandType.StoredProcedure);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Error retrieving all members: {ex.Message}", ex);
+                throw;
+            }
         }
 
         /// <summary>
@@ -72,6 +80,29 @@ namespace PRG262_Bob_s_Gym.DataAccess
         {
             SqlParameter[] parameter = { new SqlParameter("@SearchTerm", searchTerm ?? "") };
             return DBHelper.ExecDataTable("sp_SearchMembers", CommandType.StoredProcedure, parameter);
+        }
+
+        /// <summary>
+        /// Deletes a member from the database
+        /// 
+        /// </summary>
+        /// <param name="memberID">ID of the member to delete</param>
+        
+        public bool DeleteMember(int memberID)
+        {
+            try
+            {
+                SqlParameter[] parameter =
+                {
+                    new SqlParameter("@MemberID", memberID)
+                };
+
+                int rowsAffected = DBHelper.ExecuteNonQ("sp_DeleteMember", CommandType.StoredProcedure, parameter);
+                return rowsAffected > 0;
+            } catch(Exception ex)
+            {
+                throw new Exception($"Error deleting member: {ex.Message}", ex);
+            }
         }
     }
 }
